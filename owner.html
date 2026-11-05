@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Owner Portal (Demo) | Braids By Mimi</title>
+<meta name="description" content="Braids By Mimi owner portal demo: today's chair, website booking requests, calendar, clients, money and menu.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0A0C">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/fonts.css?v=20261105e">
+<link rel="stylesheet" href="assets/css/site.css?v=20261105e">
+<link rel="stylesheet" href="assets/css/portal.css?v=20261105e">
+<script src="assets/js/js-flag.js?v=20261105e"></script>
+<script src="assets/js/portal-data.js?v=20261105e" defer></script>
+<script src="assets/js/portal.js?v=20261105e" defer></script>
+</head>
+<body class="portal-body">
+<div class="pt-demo" role="note">Demo mode<span class="long"> · sample clients and appointments · nothing is saved or sent</span> · <a href="index.html">Back to the website</a></div>
+<main class="pt-login" id="pt-login">
+  <form class="pt-login-card" id="pt-enter" aria-labelledby="pt-lh">
+    <img class="brand-logo" src="assets/img/braids-by-mimi-logo-160.webp" width="160" height="160" alt="Braids By Mimi logo">
+    <h1 id="pt-lh">Owner <em>portal</em></h1>
+    <p>Your chair, your requests, your clients and your money, in one place on your phone.</p>
+    <div class="field"><label for="pt-pin">Demo PIN</label><input id="pt-pin" inputmode="numeric" autocomplete="off" value="1234" maxlength="6"></div>
+    <p class="f-err" id="pt-lerr" role="alert"></p>
+    <button class="btn btn-pink" type="submit">Enter the demo</button>
+    <p class="pt-small">Live version: private login for Mimi only.</p>
+  </form>
+</main>
+<div class="pt-app" id="pt-app" hidden>
+  <aside class="pt-side" aria-label="Portal">
+    <a class="brand" href="index.html" aria-label="Braids By Mimi, home"><img class="brand-logo" src="assets/img/braids-by-mimi-logo-160.webp" width="160" height="160" alt=""><span class="wm"><span class="wm-name">Braids By <i>Mimi</i></span><span class="wm-sub">Neatness, Perfection</span></span></a>
+    <a class="nav" href="#today"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Today</a><a class="nav" href="#requests"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13l3-8h12l3 8v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h5l1 3h6l1-3h5"/></svg>Requests<span class="cnt" data-count="requests" hidden>0</span></a><a class="nav" href="#calendar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Calendar</a><a class="nav" href="#clients"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>Clients</a><a class="nav" href="#money"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Money</a><a class="nav" href="#menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu &amp; prices</a><a class="nav" href="#settings"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Settings</a>
+    <div class="pt-side-foot"><b>Braids By Mimi</b><br>6492 Landover Rd, Suite B, Room 6<br>Deposit $25 · Walk-ins on</div>
+  </aside>
+  <div>
+    <header class="pt-top"><img class="brand-logo" src="assets/img/braids-by-mimi-logo-160.webp" width="160" height="160" alt=""><span class="pt-top-title" id="pt-title">Today</span>
+      <div class="pt-top-actions"><a class="icon-btn" href="#requests" aria-label="Website requests"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13l3-8h12l3 8v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h5l1 3h6l1-3h5"/></svg><span class="dot" data-count="requests" hidden>0</span></a><a class="icon-btn" href="index.html" aria-label="View website"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg></a></div></header>
+    <main class="pt-main" id="pt-main" tabindex="-1"></main>
+  </div>
+  <nav class="pt-tabs" aria-label="Portal tabs"><a href="#today"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Today</a><a href="#requests"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13l3-8h12l3 8v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h5l1 3h6l1-3h5"/></svg>Requests<span class="dot" data-count="requests" hidden>0</span></a><a href="#calendar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>Calendar</a><a href="#clients"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>Clients</a><a href="#more"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More</a></nav>
+</div>
+<div class="scrim" id="pt-scrim" hidden></div>
+<div class="toast" id="pt-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

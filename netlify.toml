@@ -1,0 +1,103 @@
+# Braids By Mimi - static site, no build step
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+# Internal team files: never served
+[[redirects]]
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/LAUNCH-NOTES.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/QA-REPORT.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Pretty URLs and short links for flyers, IG bio and Google
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/prices"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 301
+
+[[redirects]]
+  from = "/book"
+  to = "/book.html#builder"
+  status = 302
+
+[[redirects]]
+  from = "/owner"
+  to = "/owner.html"
+  status = 301
+
+[[redirects]]
+  from = "/portal"
+  to = "/owner.html"
+  status = 301
+
+[[redirects]]
+  from = "/admin"
+  to = "/owner.html"
+  status = 301
+
+[[headers]]
+  for = "/owner.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
