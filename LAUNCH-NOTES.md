@@ -42,7 +42,7 @@ Everything below needs Mimi's confirmation or action before or at launch. Facts 
 - `/book` short link (netlify.toml) goes to the booking builder: use it on flyers and in her Instagram bio in place of the dead Booksy link.
 
 ## Domain
-- Live preview (canonical everywhere): https://braids-by-mimi.netlify.app/
+- Live preview (canonical everywhere): https://braids-by-mimi-website.netlify.app/
 - Suggested custom domains: braidsbymimi.com or braidsbymimimd.com (availability not checked). When bought, replace the preview URL in canonical/og tags (tools/build.py BASE), sitemap.xml, robots.txt and llms.txt.
 
 ## Google Business Profile actions

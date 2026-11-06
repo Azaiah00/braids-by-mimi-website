@@ -5,6 +5,13 @@
   var reduce = win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in win;
   var PHONE = '+14694419208';
+  /* Canonical public URL — used in every pre-written text so clients always get the live Netlify site. */
+  var SITE_URL = 'https://braids-by-mimi-website.netlify.app/';
+  var BOOK_URL = SITE_URL + 'book';
+  /* Pre-fill "share this site" texts with the canonical link only (no old Netlify names). */
+  doc.querySelectorAll('[data-sms-site]').forEach(function (a) {
+    a.href = 'sms:?&body=' + encodeURIComponent('Braids By Mimi — book online:\n' + BOOK_URL);
+  });
 
   /* ---------- Mobile menu ---------- */
   var btn = doc.querySelector('.menu-btn'), nav = doc.getElementById('mnav');
@@ -153,7 +160,7 @@
     function val(n) { var e = form.querySelector('[name="' + n + '"]'); if (!e) return ''; if (e.type === 'radio') { var c = form.querySelector('[name="' + n + '"]:checked'); return c ? c.value : ''; } return (e.value || '').trim(); }
     function smsHref() {
       var s = chosen(), cat = form.querySelector('input[name="category"]:checked');
-      var lines = ['Hi Mimi! I found you on your website and want to book:'];
+      var lines = ['Hi Mimi! I want to book through your website:', BOOK_URL];
       if (s && cat) lines.push(cat.getAttribute('data-label') + ' - ' + s.getAttribute('data-label') + ' (' + (hidPrice ? hidPrice.value : '') + ')');
       var d = val('date'), t = val('time'), n = val('name'), m = val('notes');
       if (d) { var dt = new Date(d + 'T12:00:00'); lines.push('Day: ' + (isNaN(dt) ? d : dt.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }))); }

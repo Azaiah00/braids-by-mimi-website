@@ -2,7 +2,7 @@
 
 Spec website for **Braids By Mimi** (Mimi / Micheline, @braid_by_mimi), 6492 Landover Rd, Suite B, Room 6, Cheverly, MD 20785. Built by Couture House Co. (hello@couturehouse.co).
 
-- Live preview (canonical): https://braids-by-mimi.netlify.app/
+- Live preview (canonical): https://braids-by-mimi-website.netlify.app/
 - Booking: on-site request builder (pre-written text to (469) 441-9208 + Netlify form `booking-request`). `/book` short link.
 
 ## Concept: "Neatness, Perfection" (her logo's tagline)
@@ -64,7 +64,7 @@ Open http://localhost:8080/.
 1. Push this folder to a new GitHub repo (e.g. `braids-by-mimi`).
 2. Netlify: import from GitHub, no build command, publish directory `.`. Name the site `braids-by-mimi` so canonical URLs match.
 3. Forms: Netlify detects `booking-request` on deploy. Turn on email notifications (Site settings, Forms).
-4. Custom domain: replace `https://braids-by-mimi.netlify.app/` everywhere (canonical, og, JSON-LD, sitemap.xml, robots.txt, llms.txt).
+4. Custom domain: replace `https://braids-by-mimi-website.netlify.app/` everywhere (canonical, og, JSON-LD, sitemap.xml, robots.txt, llms.txt).
 
 ## Device QA (Nov 4 2026)
 Checked every page on iPhone SE (375x667), Android 360x780, iPhone 14 (390x664), iPhone 15 Pro Max, Pixel 7, phone landscape (844x390), iPad Mini portrait, iPad landscape, laptops 1280x720 / 1366x768 / 1440x900 / 1536x695 and 1920x1080:

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /404.html
 Disallow: /owner.html
 
-Sitemap: https://braids-by-mimi.netlify.app/sitemap.xml
+Sitemap: https://braids-by-mimi-website.netlify.app/sitemap.xml

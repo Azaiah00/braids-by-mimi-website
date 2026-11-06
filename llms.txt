@@ -44,7 +44,7 @@
 - Kids' hairstyle: From $100 (Starting price, by style)
 
 ## Pages
-- Home: https://braids-by-mimi.netlify.app/
-- Services and prices: https://braids-by-mimi.netlify.app/services.html
-- Gallery: https://braids-by-mimi.netlify.app/gallery.html
-- Book and visit: https://braids-by-mimi.netlify.app/book.html
+- Home: https://braids-by-mimi-website.netlify.app/
+- Services and prices: https://braids-by-mimi-website.netlify.app/services.html
+- Gallery: https://braids-by-mimi-website.netlify.app/gallery.html
+- Book and visit: https://braids-by-mimi-website.netlify.app/book.html

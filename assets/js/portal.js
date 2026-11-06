@@ -7,6 +7,9 @@
   var doc = document, win = window;
   var MENU = win.MIMI_MENU || { cats: [], gallery: [] };
   var reduce = win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Same canonical URL as the public site — every client-facing text uses this, not localhost or old Netlify names. */
+  var SITE_URL = 'https://braids-by-mimi-website.netlify.app/';
+  var BOOK_URL = SITE_URL + 'book';
 
   /* ---------------- helpers ---------------- */
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -296,7 +299,7 @@
   V.more = function () {
     var h = '<div class="pt-h"><div><h1>More</h1></div></div><ul class="list">';
     [['money', 'chart', 'Money', 'Revenue, top styles, rebook list'], ['menu', 'menu', 'Menu & prices', 'Edit prices on your website'], ['settings', 'gear', 'Settings', 'Hours, deposit, booking rules']].forEach(function (x) { h += '<li><a class="cl" href="#' + x[0] + '"><span class="av" aria-hidden="true">' + ic(x[1]) + '</span><span><b>' + x[2] + '</b><small>' + x[3] + '</small></span><span class="r">' + ic('right') + '</span></a></li>'; });
-    return h + '<li><a class="cl" href="index.html"><span class="av" aria-hidden="true">' + ic('site') + '</span><span><b>View website</b><small>braids-by-mimi.netlify.app</small></span><span class="r">' + ic('right') + '</span></a></li><li><button class="cl" data-act="logout"><span class="av" aria-hidden="true">' + ic('out') + '</span><span><b>Sign out</b><small>Leave the demo</small></span><span class="r"></span></button></li></ul>';
+    return h + '<li><a class="cl" href="' + SITE_URL + '" rel="noopener"><span class="av" aria-hidden="true">' + ic('site') + '</span><span><b>View website</b><small>braids-by-mimi-website.netlify.app</small></span><span class="r">' + ic('right') + '</span></a></li><li><button class="cl" data-act="logout"><span class="av" aria-hidden="true">' + ic('out') + '</span><span><b>Sign out</b><small>Leave the demo</small></span><span class="r"></span></button></li></ul>';
   };
 
   /* ---------------- render + router ---------------- */
@@ -395,7 +398,7 @@
       var cl = client(cid), first = cl.name.split(' ')[0], s = svc(ap.svc);
       if (o.req) {
         o.req.status = 'booked';
-        var body = 'Hi ' + first + '! Mimi here. You are booked for ' + s.label.toLowerCase() + ' on ' + fmtDay(ap.date, true) + ' at ' + fmtTime(ap.start) + '. Please send the $' + DB.settings.deposit + ' deposit to hold your spot. Suite B, Room 6, 6492 Landover Rd, Cheverly. See you then!';
+        var body = 'Hi ' + first + '! Mimi here. You are booked for ' + s.label.toLowerCase() + ' on ' + fmtDay(ap.date, true) + ' at ' + fmtTime(ap.start) + '. Please send the $' + DB.settings.deposit + ' deposit to hold your spot. Suite B, Room 6, 6492 Landover Rd, Cheverly. Book again anytime: ' + BOOK_URL;
         closeLayer(); toast('Booked. Opening your text to ' + first + '...');
         setTimeout(function () { win.location.href = sms(cl.phone, body); }, 500);
       } else { closeLayer(); toast((o.walkin ? 'Walk-in added: ' : 'Booked: ') + first + ', ' + rel(ap.date) + ' at ' + fmtTime(ap.start)); }
